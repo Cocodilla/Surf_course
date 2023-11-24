@@ -153,5 +153,20 @@ final mapAfter2010 = {
 };
 
 void main() {
-  // Your code here.
+  // Создаем список объектов класса AgriculturalMachinery
+List<AgriculturalMachinery> agriculturalMachinery = [
+ AgriculturalMachinery(id: 'A', releaseDate: DateTime.parse('2020-01-01')),
+ AgriculturalMachinery(id: 'B', releaseDate: DateTime.parse('2018-09-20')),
+ AgriculturalMachinery(id: 'C', releaseDate: DateTime.parse('2017-12-05')),
+];
+
+// Используем метод sort для сортировки списка
+agriculturalMachinery.sort((AgriculturalMachinery a, AgriculturalMachinery b) {
+ return a.releaseDate.compareTo(b.releaseDate);
+ });
+
+// Печатаем отсортированный список
+for (var machine in agriculturalMachinery) {
+ print(machine.id);
+ }
 }
